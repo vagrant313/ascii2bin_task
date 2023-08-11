@@ -4,7 +4,7 @@
 This Vivado project implements a ASCII input of digits of legth 1 to 8 and giver result to binary output. 
 
 ## Prerequisites
-- Xilinx Vivado (version 2019.1 or higher)
+- Xilinx Vivado (version 2018 or higher)
 - FPGA board SP701 (optional for hardware testing)
 
 ## Project Generation
