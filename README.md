@@ -10,8 +10,9 @@ This Vivado project implements a ASCII input of digits of legth 1 to 8 and giver
 ## Project Generation
 1. Open Xilinx Vivado.
 2. Goto TCL comandline.
-3. source create_project.tcl
-6. the script will Run synthesis and implementation and Generate the bitstream.
+3. CD to the repo directory
+4. source ./create_project.tcl
+5. the script will Run synthesis and implementation and Generate the bitstream.
 
 ## References
 The BCD conversion algorithem is inspired by below reference
