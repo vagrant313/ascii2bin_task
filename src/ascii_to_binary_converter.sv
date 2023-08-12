@@ -29,6 +29,7 @@ module ascii_to_binary_converter #( parameter DIGITS_LENGTH = 8)
     logic  [(DIGITS_LENGTH*4-1):0] binary_data_reg;
     logic  [(DIGITS_LENGTH*4-1):0] bcd_data_reg;
     logic                    [3:0] ascii2bcd_nibble;
+    logic  [(DIGITS_LENGTH*4-1):0] ascii2bcd_data;
     
     //FSM State registers
     state_t     state_q;      //current state
@@ -73,11 +74,13 @@ module ascii_to_binary_converter #( parameter DIGITS_LENGTH = 8)
     
    //ascii to bcd conversion
    //assuming the input character will always vary from "0-9"
+   assign ascii2bcd_data = ascii_char_in - 8'd48;
+
    always_ff @(posedge clk or negedge rst_n) begin
     if(!rst_n) begin
         ascii2bcd_nibble <= '0;    
     end else begin
-        ascii2bcd_nibble <= ascii_char_in - 8'd48;
+        ascii2bcd_nibble <= ascii2bcd_data;
     end   
    end  
     
